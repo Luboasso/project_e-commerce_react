@@ -3,6 +3,7 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import { ProductsProvider } from "./context/ProductsContext/ProductsState";
 import Products from "../src/components/Products/Products";
 import Header from "./components/Header/Header";
+import Home from "./components/Home/Home";
 
 function App() {
   return (
@@ -11,8 +12,8 @@ function App() {
         <ProductsProvider>
           <Header />
           <Routes>
-            <Route path="/" element={<Products />} />
-            {/* <Route path="/contact" element={<Contact />} /> */}
+            <Route path="/shop" element={<Products />} />
+            <Route path="/home" element={<Home />} />
           </Routes>
         </ProductsProvider>
       </Router>
