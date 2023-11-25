@@ -12,7 +12,7 @@ const Products = () => {
     <>
       {products.map((product) => {
         return (
-          <div>
+          <div key={product.id}>
             <h2>{product.product_name}</h2>
           </div>
         );
