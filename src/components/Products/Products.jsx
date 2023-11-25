@@ -14,6 +14,7 @@ const Products = () => {
         return (
           <div key={product.id}>
             <h2>{product.product_name}</h2>
+            <p>{product.description}</p>
           </div>
         );
       })}
