@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../context/UserContext/UserState';
 
 const Header = () => {
+  const {user} = useContext(UserContext)
   return (
     <header>
       <h1>Miraculous Store</h1>
