@@ -23,7 +23,7 @@ const Products = () => {
           >
             <p>{product.description}</p>
             <p>{product.price}</p>
-            <Button type="primary">
+            <Button>
               Add to Cart
               <ShoppingCartOutlined />
             </Button>
