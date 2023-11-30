@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../context/UserContext/UserState";
-import { UserOutlined, LogoutOutlined } from "@ant-design/icons";
+import { UserOutlined, LogoutOutlined, LoginOutlined } from "@ant-design/icons";
 
 const Header = () => {
   const { user, logout } = useContext(UserContext);
@@ -24,16 +24,16 @@ const Header = () => {
           </li>
 
           {user ? (
-            ((<Link to="/cart">Cart</Link>),
+            (
             (
               <Link to="/profile">
                 {user.first_name}
                 <UserOutlined />
               </Link>
-            ),
-            (<Link to="/logout" onClick={logout} ><LogoutOutlined /></Link>))
+            ),(<Link to="/cart">Cart</Link>),
+            (<Link to="/logout" onClick={logout} ><LogoutOutlined /> Log out</Link>))
           ) : (
-            <Link to="/login">Log in</Link>
+            <Link to="/login"><LoginOutlined /> Log in</Link>
           )}
         </ul>
       </nav>
