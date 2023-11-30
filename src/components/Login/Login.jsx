@@ -2,12 +2,18 @@ import React from "react";
 import { Button, Form, Input } from "antd";
 import { useContext } from "react";
 import { UserContext } from "../../context/UserContext/UserState";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const { login } = useContext(UserContext);
+  const navigate = useNavigate();
+
   const onFinish = (values) => {
     login(values);
     console.log("Login successful:", values);
+    setTimeout(() => {
+      navigate("/profile");
+    }, 1000);
   };
   return (
     <div>

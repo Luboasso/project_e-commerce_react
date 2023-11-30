@@ -2,7 +2,9 @@ import React from 'react';
 import { useContext } from "react";
 import { UserContext } from "../../context/UserContext/UserState";
 import { useEffect } from "react";
-import { Card, Spin } from "antd";
+import { Spin } from "antd";
+import { useNavigate } from "react-router-dom";
+
 
 
 const Profile = () => {
@@ -10,19 +12,20 @@ const Profile = () => {
     useEffect(() => {
         getUserInfo();
       }, []);
-      
+      const navigate = useNavigate();
       useEffect(() => {
         if (!user) {
           navigate("/login");
         }
       }, [user]);
       if (!user) {
+        navigate("/login");
         return <Spin />;
       }
   return (
     <div>
       <h1>Profile</h1>
-      <Card
+      {/* <Card
         title={user.first_name}
         bordered={false}
         style={{
@@ -30,7 +33,12 @@ const Profile = () => {
         }}
       >
         <p>{user.email}</p>
-      </Card>
+      </Card> */}
+       <div>
+        <h3>Name: {user.first_name}</h3>
+        <p>Email: {user.email}</p>
+       
+      </div>
     </div>
   )
 }
