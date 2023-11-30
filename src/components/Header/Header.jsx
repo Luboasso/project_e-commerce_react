@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../context/UserContext/UserState";
-import { UserOutlined } from "@ant-design/icons";
+import { UserOutlined, LogoutOutlined } from "@ant-design/icons";
 
 const Header = () => {
-  const { user } = useContext(UserContext);
+  const { user, logout } = useContext(UserContext);
   return (
     <header>
       <h1>Miraculous Store</h1>
@@ -30,7 +30,8 @@ const Header = () => {
                 {user.first_name}
                 <UserOutlined />
               </Link>
-            ))
+            ),
+            (<Link to="/logout" onClick={logout} ><LogoutOutlined /></Link>))
           ) : (
             <Link to="/login">Log in</Link>
           )}
