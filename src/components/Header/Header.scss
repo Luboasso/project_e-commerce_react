@@ -1,0 +1,40 @@
+
+header {
+    background-color: rgb(255, 215, 235);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; 
+    position: sticky;
+  top: 0;
+  z-index: 1000;
+  }
+  
+  h1 {
+    margin: 0;
+    font-size: 24px;
+    color:rgb(255, 115, 152);
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  nav ul li {
+    display: inline-block;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #555;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    color: #000;
+  }
+  

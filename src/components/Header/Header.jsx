@@ -1,7 +1,9 @@
+
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../context/UserContext/UserState";
 import { UserOutlined, LogoutOutlined, LoginOutlined } from "@ant-design/icons";
+import "./Header.scss"; 
 
 const Header = () => {
   const { user, logout } = useContext(UserContext);
@@ -22,18 +24,29 @@ const Header = () => {
           <li>
             <Link to="/signup">Sign up</Link>
           </li>
-<Link to="/cart">Cart</Link>
+          <li>
+            <Link to="/cart">Cart</Link>
+          </li>
           {user ? (
-            (
-            (
-              <Link to="/profile">
-                {user.first_name}
-                <UserOutlined />
-              </Link>
-            ),
-            (<Link to="/logout" onClick={logout} ><LogoutOutlined /> Log out</Link>))
+            <>
+              <li>
+                <Link to="/profile">
+                  {user.first_name}
+                  <UserOutlined />
+                </Link>
+              </li>
+              <li>
+                <Link to="/logout" onClick={logout}>
+                  <LogoutOutlined /> Log out
+                </Link>
+              </li>
+            </>
           ) : (
-            <Link to="/login"><LoginOutlined /> Log in</Link>
+            <li>
+              <Link to="/login">
+                <LoginOutlined /> Log in
+              </Link>
+            </li>
           )}
         </ul>
       </nav>

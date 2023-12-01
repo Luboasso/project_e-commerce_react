@@ -13,6 +13,24 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("https://64.media.tumblr.com/5feed306796f98533faee4f6c5abbb36/tumblr_pcr1qwefzs1vak7j2o1_1280.jpg");
+  background-size: cover;
+  
+}
+
+.app {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+}
+
 a {
   font-weight: 500;
   color: #646cff;

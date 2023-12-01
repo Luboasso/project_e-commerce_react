@@ -1,8 +1,11 @@
+
+
 import React from "react";
 import { Button, Form, Input } from "antd";
 import { useContext } from "react";
 import { UserContext } from "../../context/UserContext/UserState";
 import { useNavigate } from "react-router-dom";
+import "./Login.scss"; 
 
 const Login = () => {
   const { login } = useContext(UserContext);
@@ -15,20 +18,12 @@ const Login = () => {
       navigate("/profile");
     }, 1000);
   };
+
   return (
-    <div>
-      {" "}
+    <div className="login-container">
       <Form
+        className="form-container"
         name="basic"
-        labelCol={{
-          span: 8,
-        }}
-        wrapperCol={{
-          span: 16,
-        }}
-        style={{
-          maxWidth: 600,
-        }}
         initialValues={{
           remember: true,
         }}
@@ -45,7 +40,7 @@ const Login = () => {
             },
           ]}
         >
-          <Input />
+          <Input className="login-input" />
         </Form.Item>
 
         <Form.Item
@@ -58,16 +53,11 @@ const Login = () => {
             },
           ]}
         >
-          <Input.Password />
+          <Input.Password className="login-input" />
         </Form.Item>
 
-        <Form.Item
-          wrapperCol={{
-            offset: 8,
-            span: 16,
-          }}
-        >
-          <Button type="primary" htmlType="submit">
+        <Form.Item>
+          <Button className="login-button" type="primary" htmlType="submit">
             Submit
           </Button>
         </Form.Item>
@@ -75,4 +65,5 @@ const Login = () => {
     </div>
   );
 };
+
 export default Login;
