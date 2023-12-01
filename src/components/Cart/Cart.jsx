@@ -28,8 +28,8 @@ const Cart = () => {
         bordered
         dataSource={data}
         renderItem={(item) => (
-          <List.Item key={item.id}>
-            <Typography.Text mark>Name product:</Typography.Text> {item.name}
+          <List.Item>
+            <Typography.Text mark>Name product:</Typography.Text> {item}
           </List.Item>
         )}
       />
