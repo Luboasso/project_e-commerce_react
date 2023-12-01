@@ -5,7 +5,7 @@ import "./Products.scss";
 import { ShoppingCartOutlined } from "@ant-design/icons";
 
 const Products = () => {
-  const { products, getProducts } = useContext(ProductsContext);
+  const { products, getProducts, addCart } = useContext(ProductsContext);
 
   useEffect(() => {
     getProducts();
@@ -23,7 +23,7 @@ const Products = () => {
           >
             <p>{product.description}</p>
             <p>{product.price}</p>
-            <Button>
+            <Button onClick={()=>addCart(product)}>
               Add to Cart
               <ShoppingCartOutlined />
             </Button>

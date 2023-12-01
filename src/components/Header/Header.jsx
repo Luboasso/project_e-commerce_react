@@ -22,7 +22,7 @@ const Header = () => {
           <li>
             <Link to="/signup">Sign up</Link>
           </li>
-
+<Link to="/cart">Cart</Link>
           {user ? (
             (
             (
@@ -30,7 +30,7 @@ const Header = () => {
                 {user.first_name}
                 <UserOutlined />
               </Link>
-            ),(<Link to="/cart">Cart</Link>),
+            ),
             (<Link to="/logout" onClick={logout} ><LogoutOutlined /> Log out</Link>))
           ) : (
             <Link to="/login"><LoginOutlined /> Log in</Link>
